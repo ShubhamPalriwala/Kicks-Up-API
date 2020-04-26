@@ -15,8 +15,10 @@ const userSchema=new mongoose.Schema({
     trim:true,
     unique:true,
     lowercase:true,
-    validate(value){
-      if(!validator.isEmail(value)){
+    validate(value)
+    {
+      if(!validator.isEmail(value))
+      {
         throw new Error('Email is invalid')
       }
     }
@@ -37,7 +39,8 @@ const userSchema=new mongoose.Schema({
   }]
 })
 
-userSchema.methods.toJSON=function(){
+userSchema.methods.toJSON=function()
+{
   const user=this
   const userObject=user.toObject()
   delete userObject.password
@@ -45,7 +48,8 @@ userSchema.methods.toJSON=function(){
   return userObject
 }
 
-userSchema.methods.generateUID=async function(){
+userSchema.methods.generateUID=async function()
+{
   const user=this
   const token=jwt.sign({id:user.id.toString()},'kicksup-api')
   user.tokens=user.tokens.concat({token})
@@ -54,24 +58,28 @@ userSchema.methods.generateUID=async function(){
 }
 
 
-userSchema.statics.findByCredentials=async(email,password)=>{
+userSchema.statics.findByCredentials=async(email,password)=>
+{
   const user=await User.findOne({email})
 
-  if(!user){
+  if(!user)
+  {
     throw new Error('unable to login')
   }
   const isMatch=await bcrypt.compare(password,user.password)
-  if(!isMatch){
+  if(!isMatch)
+  {
     throw new Error('unable to login final');
   }
   return user
-
 }
 
-userSchema.pre('save',async function(next){
+userSchema.pre('save',async function(next)
+{
   const user=this
 
-  if(user.isModified('password')){
+  if(user.isModified('password'))
+  {
     user.password=await bcrypt.hash(user.password,8)
   }
   next()

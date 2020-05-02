@@ -31,6 +31,11 @@ const userSchema=new mongoose.Schema({
   age:{
     type:Number
   },
+  mycart:[{
+    productid:{
+      type:String
+    }
+  }],
   tokens:[{
     token:{
       type:String,

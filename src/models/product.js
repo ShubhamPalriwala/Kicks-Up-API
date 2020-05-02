@@ -8,7 +8,8 @@ const productSchema=new mongoose.Schema({
     trim:true
   },
   id:{
-    type:Number,
+    type:String,
+    minlength:4,
     required:true
   },
   brand:{

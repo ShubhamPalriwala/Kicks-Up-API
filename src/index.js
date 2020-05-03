@@ -1,11 +1,9 @@
 const express=require('express')
 require('./db/mongoose.js')
-const User=require('./models/user')
-const Product=require('./models/product')
-
-const userRouter=require('./routers/user')
-const productRouter=require('./routers/product')
-const cartRouter=require('./routers/cart')
+const User=require('./models/userModel')
+const Product=require('./models/productModel')
+const userRouter=require('./routers/userRouter')
+const productRouter=require('./routers/productRouter')
 
 const app=express()
 const port=process.env.PORT || 3000
@@ -13,9 +11,12 @@ const port=process.env.PORT || 3000
 app.use(express.json())
 app.use('/users',userRouter)
 app.use('/products',productRouter)
-app.use(cartRouter)
+
+app.get('*',(req,res)=>{
+    res.status(404).send('Page not Found')
+})
 
 app.listen(port,()=>
 {
-  console.log('App is running on Port ',+port)
+    console.log('App is running on Port ',+port)
 })

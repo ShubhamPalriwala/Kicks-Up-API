@@ -5,7 +5,7 @@ const devAuth=async(req,res,next)=>
 {
     try{
         const token=req.header('Dev_Auth')
-        if(token==='Devil'){
+        if(token===process.env.SUPER_USER){
             next()
         }
         else{

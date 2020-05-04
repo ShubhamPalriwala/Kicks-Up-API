@@ -7,7 +7,7 @@ const userAuth=async(req,res,next)=>
     try
     {
         const token=req.header('Authorization').replace('Bearer ','')
-        const decoded=jwt.verify(token,'kicksup-api')
+        const decoded=jwt.verify(token,process.env.USERTOKEN)
         const user=await User.findOne({_id:decoded.id, 'tokens.token':token})
         if(!user)
         {

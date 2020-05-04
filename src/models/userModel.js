@@ -56,7 +56,7 @@ userSchema.methods.toJSON=function()
 userSchema.methods.generateUID=async function()
 {
     const user=this
-    const token=jwt.sign({id:user.id.toString()},'kicksup-api')
+    const token=jwt.sign({id:user.id.toString()},process.env.USERTOKEN)
     user.tokens=user.tokens.concat({token})
     await user.save()
     return token

@@ -23,8 +23,109 @@ const findProduct=async (req,res)=>
 {
     try
     {
-        const products=await Product.find({})
-        res.status(200).send(products)
+        const brand=req.query.brand
+        const colour=req.query.colour
+        const gender=req.query.gender
+        const sortBy=req.query.sortBy
+
+
+        if(brand&&colour&&gender)
+        {
+            const products=await Product.find({brand:brand,colour:colour,gender:gender}).sort(sortBy)
+            if(!products.length)
+            {
+                res.status(404).send('No such product available')
+            }
+            else
+            {
+                res.status(200).send(products)
+            }
+        }
+        else if(brand&&colour)
+        {
+            const products=await Product.find({brand,colour}).sort(sortBy)
+            if(!products.length)
+            {
+                res.status(404).send('No such product available')
+            }
+            else
+            {
+                res.status(200).send(products)
+            }
+        }
+        else if(brand&&gender)
+        {
+            const products=await Product.find({brand,gender}).sort(sortBy)
+            if(!products.length)
+            {
+                res.status(404).send('No such product available')
+            }
+            else
+            {
+                res.status(200).send(products)
+            }
+        }
+        else if(gender&&colour)
+        {
+            const products=await Product.find({gender,colour}).sort(sortBy)
+            if(!products.length)
+            {
+                res.status(404).send('No such product available')
+            }
+            else
+            {
+                res.status(200).send(products)
+            }
+        }
+        else if(gender)
+        {
+            const products=await Product.find({gender}).sort(sortBy)
+            if(!products.length)
+            {
+                res.status(404).send('No such product available')
+            }
+            else
+            {
+                res.status(200).send(products)
+            }
+        }
+        else if(colour)
+        {
+            const products=await Product.find({colour}).sort(sortBy)
+            if(!products.length)
+            {
+                res.status(404).send('No such product available')
+            }
+            else
+            {
+                res.status(200).send(products)
+            }
+        }
+        else if(brand)
+        {
+            const products=await Product.find({brand}).sort(sortBy)
+            if(!products.length)
+            {
+                res.status(404).send('No such product available')
+            }
+            else
+            {
+                res.status(200).send(products)
+            }
+        }
+        else
+        {
+            const products=await Product.find({}).sort(sortBy)
+            if(!products.length)
+            {
+                res.status(404).send('No such product available')
+            }
+            else
+            {
+                res.status(200).send(products)
+            }
+        }
+
     }
     catch(error)
     {

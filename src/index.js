@@ -12,9 +12,9 @@ app.use(express.json())
 app.use('/users',userRouter)
 app.use('/products',productRouter)
 
-app.get('*',(req,res)=>{
-    res.status(404).send('Page not Found')
-})
+// app.get('*',(req,res)=>{
+//     res.status(404).send('Page not Found')
+// })
 
 app.listen(port,()=>
 {

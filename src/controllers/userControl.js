@@ -138,6 +138,41 @@ const viewCart=async(req,res)=>{
     }
 }
 
+const deleteFromCart=async(req,res)=>{
+    try
+    {
+        for (var i = 0; i < req.user.mycart.length-1; i++)
+        {
+            if(req.body.productid===req.user.mycart[i].productid)
+            {
+                req.user.mycart.splice(i,1)
+            }
+        }
+        await req.user.save()
+        res.send(req.user.mycart)
+    }
+    catch(error)
+    {
+        res.status(400).send('Unable to remove product right now')
+    }
+}
+
+const deleteAllCart=async(req,res)=>{
+    try
+    {
+        for (var i = 0; i < req.user.mycart.length; i++)
+        {
+            req.user.mycart.splice(i)
+        }
+        await req.user.save()
+        res.send(req.user.mycart)
+    }
+    catch(error)
+    {
+        res.status(400).send('Unable to CLear your cart right now')
+    }
+}
+
 module.exports={
-    signupUser,loginUser,logoutfromone,logoutfromall,readProfile,updateProfile,deleteProfile,addToCart,viewCart
+    signupUser,loginUser,logoutfromone,logoutfromall,readProfile,updateProfile,deleteProfile,addToCart,viewCart,deleteFromCart,deleteAllCart
 }

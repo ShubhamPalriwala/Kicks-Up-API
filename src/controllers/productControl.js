@@ -198,7 +198,7 @@ const deleteProduct=async (req,res)=>
 {
     try
     {
-        const product=await Product.findByIdAndDelete(req.params.id)
+        const product=await Product.findOneAndDelete({id:req.params.id})
         if(!product)
         {
             res.status(404).send('No such Product found')

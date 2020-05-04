@@ -4,7 +4,7 @@ const userAuth=require('../middleware/userAuth')
 const Product=require('../models/productModel')
 const User=require('../models/userModel')
 
-const {signupUser,loginUser,logoutfromone,logoutfromall,readProfile,updateProfile,deleteProfile,addToCart,viewCart,signupDev}=require('../controllers/userControl')
+const {signupUser,loginUser,logoutfromone,logoutfromall,readProfile,updateProfile,deleteProfile,addToCart,viewCart,signupDev,deleteFromCart,deleteAllCart}=require('../controllers/userControl')
 
 router.post('/signup',signupUser)
 router.post('/login',loginUser)
@@ -15,6 +15,8 @@ router.patch('/me',userAuth,updateProfile)
 router.delete('/me',userAuth,deleteProfile)
 router.post('/addtocart',userAuth,addToCart)
 router.get('/mycart',userAuth,viewCart)
+router.post('/deletefromcart',userAuth,deleteFromCart)
+router.get('/clearcart',userAuth,deleteAllCart)
 
 
 module.exports=router

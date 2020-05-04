@@ -31,13 +31,9 @@ Product Route | Request Type | Function
 
 Clone this repository and run 'npm install' to grab all the necessary packages\
 Configure MongoDB in your system and install a GUI, in my case, Robo 3T or MongoDB Compass\
-Create a folder in your local device named for example mongodb-data\
-Make sure to load it in place of --dbpath given below\
-
 
 Run the following in a separate command window:\
 /Users/Sanjay/mongodb/bin/mongod --dbpath=/Users/Sanjay/mongodb-data\
 Make necessory changes to the above command as per your machine\
 
-The database will be running now\
 Now in a separate command window run 'npm start' or 'npm run dev'

@@ -27,11 +27,22 @@ const findProduct=async (req,res)=>
         const colour=req.query.colour
         const gender=req.query.gender
         const sortBy=req.query.sortBy
+        var maxPrice=100000
+        if(req.query.maxPrice)
+        {
+            maxPrice=req.query.maxPrice
+        }
+        var minPrice=0
+        if(req.query.minPrice)
+        {
+            minPrice=req.query.minPrice
+        }
+
 
 
         if(brand&&colour&&gender)
         {
-            const products=await Product.find({brand:brand,colour:colour,gender:gender}).sort(sortBy)
+            const products=await Product.find({brand:brand,colour:colour,gender:gender,"price":{$lte:maxPrice,$gte:minPrice}}).sort(sortBy)
             if(!products.length)
             {
                 res.status(404).send('No such product available')
@@ -43,7 +54,7 @@ const findProduct=async (req,res)=>
         }
         else if(brand&&colour)
         {
-            const products=await Product.find({brand,colour}).sort(sortBy)
+            const products=await Product.find({brand,colour,"price":{$lte:maxPrice,$gte:minPrice}}).sort(sortBy)
             if(!products.length)
             {
                 res.status(404).send('No such product available')
@@ -55,7 +66,7 @@ const findProduct=async (req,res)=>
         }
         else if(brand&&gender)
         {
-            const products=await Product.find({brand,gender}).sort(sortBy)
+            const products=await Product.find({brand,gender,"price":{$lte:maxPrice,$gte:minPrice}}).sort(sortBy)
             if(!products.length)
             {
                 res.status(404).send('No such product available')
@@ -67,7 +78,7 @@ const findProduct=async (req,res)=>
         }
         else if(gender&&colour)
         {
-            const products=await Product.find({gender,colour}).sort(sortBy)
+            const products=await Product.find({gender,colour,"price":{$lte:maxPrice,$gte:minPrice}}).sort(sortBy)
             if(!products.length)
             {
                 res.status(404).send('No such product available')
@@ -79,7 +90,7 @@ const findProduct=async (req,res)=>
         }
         else if(gender)
         {
-            const products=await Product.find({gender}).sort(sortBy)
+            const products=await Product.find({gender,"price":{$lte:maxPrice,$gte:minPrice}}).sort(sortBy)
             if(!products.length)
             {
                 res.status(404).send('No such product available')
@@ -91,7 +102,7 @@ const findProduct=async (req,res)=>
         }
         else if(colour)
         {
-            const products=await Product.find({colour}).sort(sortBy)
+            const products=await Product.find({colour,"price":{$lte:maxPrice,$gte:minPrice}}).sort(sortBy)
             if(!products.length)
             {
                 res.status(404).send('No such product available')
@@ -103,7 +114,7 @@ const findProduct=async (req,res)=>
         }
         else if(brand)
         {
-            const products=await Product.find({brand}).sort(sortBy)
+            const products=await Product.find({brand,"price":{$lte:maxPrice,$gte:minPrice}}).sort(sortBy)
             if(!products.length)
             {
                 res.status(404).send('No such product available')
@@ -115,7 +126,7 @@ const findProduct=async (req,res)=>
         }
         else
         {
-            const products=await Product.find({}).sort(sortBy)
+            const products=await Product.find({"price":{$lte:maxPrice,$gte:minPrice}}).sort(sortBy)
             if(!products.length)
             {
                 res.status(404).send('No such product available')

@@ -4,8 +4,6 @@ Here, I've created a Backend for an e-commerce website as my Web Dev project for
 
 I'd like to thank my Mentor [Ziyan Karmali](https://github.com/ZiyanK ) without whom this might have not been possible.
 
-In Postman use this [URL](https://kicksup.herokuapp.com/) to try all the requests.
-
 
 User Route  | Request Type | Function
 ------------- | -------------|---------

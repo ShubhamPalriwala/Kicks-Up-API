@@ -1,0 +1,29 @@
+Main:
+/store			GET request store homepage
+/store/productid	GET request specific product	
+
+
+
+Product:
+Sort by Price, Latest Arrival, 
+Filter by cost, colour, gender, brand, design templates available, and type of shoes 
+Having 6 products per page
+
+
+Users:
+authorization to be used on every page
+passwords to be hashed
+welcome and confirmation mails to be sent
+
+/signup		POST request sign up for the website using general details with data validation
+/login		POST request login with your credentials
+/logout		POST request logout of the profile
+/me		GET request read user profile
+/me		PATCH request to update user profile
+
+Cart:
+
+
+/cart		GET request access to my cart
+/addtocart	POST request add product to the users cart
+/checkout	GET 

@@ -1,0 +1,17 @@
+Products:
+	productname: 
+	productid: 
+	/////timestamp:	
+	product brand: 
+	product price:
+	gender:
+	color:
+
+User:
+	email:
+	name:
+	password:
+	age:
+	authToken-RENAME TO UID:
+	ADDRESS:
+	PINCODE

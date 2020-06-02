@@ -16,7 +16,7 @@ User Route  | Request Type | Function
 /users/me | Delete | Deletes the current profile permanantly
 /users/addtocart | Post | Adds an item to cart when you enter the product ID in JSON format
 /users/mycart | Get | Returns all the items in the cart as well as the total Cart Value
-/users/deletefromcart | Post | Deletes the specific item from your cart when the product ID is entered inv JSON format
+/users/deletefromcart | Post | Deletes the specific item from your cart when the product ID is entered in JSON format
 /users/clearcart | Get | Removes all the items from your cart
 
 Product Route | Request Type | Function

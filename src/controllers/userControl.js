@@ -64,7 +64,12 @@ const logoutfromall=async (req,res)=>
 
 const readProfile=async (req,res)=>
 {
-    res.status(200).send(req.user)
+    try{
+        res.status(200).send(req.user)
+    }
+    catch(err){
+        res.status(400).send('Unable to Read your profile right now')
+    }
 }
 
 const updateProfile=async (req,res)=>

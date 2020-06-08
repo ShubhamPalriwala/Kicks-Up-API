@@ -146,15 +146,16 @@ const viewCart=async(req,res)=>{
 const deleteFromCart=async(req,res)=>{
     try
     {
-        for (var i = 0; i < req.user.mycart.length-1; i++)
+        for (var i = 0; i < req.user.mycart.length ; i++)
         {
             if(req.body.productid===req.user.mycart[i].productid)
             {
                 req.user.mycart.splice(i,1)
+                break
             }
         }
         await req.user.save()
-        res.send(req.user.mycart)
+        res.status(200).send(req.user.mycart)
     }
     catch(error)
     {

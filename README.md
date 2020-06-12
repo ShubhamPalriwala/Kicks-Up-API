@@ -25,7 +25,7 @@ Product Route | Request Type | Function
 /products/ | Get | Return all the products. Add query parameters such as brand, gender, colour, sortBy, maxPrice, minPrice to refine your search
 /products/:id | Get | Search a specific product by it's ID
 /products/:id/update | Patch | Lets the Authorized Person uodate a products parameters
-/products/:id/delete | Delete | Lets the Authorized Person remove an existing product from the Website
+/products/:id | Delete | Lets the Authorized Person remove an existing product from the Website
 
 ### For Local Use: ###
 

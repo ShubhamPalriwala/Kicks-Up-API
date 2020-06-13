@@ -27,4 +27,5 @@ Product Route | Request Type | Function
 /products/:id/update | Patch | Lets the Authorized Person uodate a products parameters
 /products/:id | Delete | Lets the Authorized Person remove an existing product from the Website
 
-
+## Sample Requests and Responses ##
+### View it in Postman Documentation by clicking [here](https://documenter.getpostman.com/view/11026000/Szzhddp3?version=latest)

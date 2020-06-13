@@ -7,22 +7,22 @@ I'd like to thank my Mentor [Ziyan Karmali](https://github.com/ZiyanK ) without 
 
 User Route  | Request Type | Function
 ------------- | -------------|---------
-/users/signup  | Post | Lets you signup as a new user when you enter your name,email and password in json format
-/users/login  | Post | Lets you login after you enter your email and password
+/users/signup  | Post | Signs you up as a new user
+/users/login  | Post | Logs you in after you enter your credentials
 /users/logout | Post | Logs you out from the current session
 /users/logoutall | Post | Logs you out from all the active sessions
 /users/me | Get | Returns your profile
-/users/me | Patch | Lets you update your details when entered in JSON format
-/users/me | Delete | Deletes the current profile permanantly
-/users/addtocart | Post | Adds an item to cart when you enter the product ID in JSON format
-/users/mycart | Get | Returns all the items in the cart as well as the total Cart Value
-/users/deletefromcart | Post | Deletes the specific item from your cart when the product ID is entered in JSON format
-/users/clearcart | Get | Removes all the items from your cart
+/users/me | Patch | Updates the details you requested
+/users/me | Delete | Deletes your profile permanantly
+/users/addtocart | Post | Adds an item to yout cart
+/users/mycart | Get | Displays all the items in the cart as well as the total Cart Value
+/users/deletefromcart | Post | Deletes the specific product from your cart 
+/users/clearcart | Get | Removes all the products from your cart
 
 Product Route | Request Type | Function
 ------------- | -------------|---------
 /products/create | Post | Lets the Authorized Person add a new product to the Website
-/products/ | Get | Return all the products. Add query parameters such as brand, gender, colour, sortBy, maxPrice, minPrice to refine your search
+/products/ | Get | Displays all the products. Add query parameters such as brand, gender, colour, sortBy, maxPrice, minPrice to refine your search
 /products/:id | Get | Search a specific product by it's ID
 /products/:id/update | Patch | Lets the Authorized Person uodate a products parameters
 /products/:id | Delete | Lets the Authorized Person remove an existing product from the Website

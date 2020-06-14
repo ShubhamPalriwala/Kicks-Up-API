@@ -27,8 +27,8 @@ Product Route | Request Type | Function
 /products/:id/update | Patch | Lets the Authorized Person uodate a products parameters
 /products/:id | Delete | Lets the Authorized Person remove an existing product from the Website
 
-## Sample Requests and Responses ##
-### View them in Postman by clicking [here](https://documenter.getpostman.com/view/11026000/Szzhddp3?version=latest)
+### Sample Requests and Responses ###
+View them in Postman by clicking [here](https://documenter.getpostman.com/view/11026000/Szzhddp3?version=latest)
 
 ### SendGrid API has been used to send: ###
 * A Welcome Mail when a User registers

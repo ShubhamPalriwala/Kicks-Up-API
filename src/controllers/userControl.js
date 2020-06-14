@@ -1,6 +1,7 @@
 const User=require('../models/userModel')
 const Product=require('../models/productModel')
 const express=require('express')
+const {sendWelcomeMail, updatesMail, sendGoodByeMail}=require('../emails/account')
 
 const signupUser=async (req,res)=>
 {
@@ -8,6 +9,7 @@ const signupUser=async (req,res)=>
     try
     {
         await user.save()
+        sendWelcomeMail(user.email,user.name)
         const token= await user.generateUID()
         res.status(201).send({user,token})
     }
@@ -86,6 +88,7 @@ const updateProfile=async (req,res)=>
     {
         updates.forEach((update) => req.user[update]=req.body[update])
         await req.user.save()
+        updatesMail(req.user.email,req.user.name)
         res.status(202).send(req.user)
     }
     catch(error)
@@ -99,6 +102,7 @@ const deleteProfile=async (req,res)=>
     try
     {
         await req.user.remove()
+        sendGoodByeMail(req.user.email,req.user.name)
         res.status(200).send(req.user)
     }
     catch(error)

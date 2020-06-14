@@ -30,7 +30,10 @@ Product Route | Request Type | Function
 ## Sample Requests and Responses ##
 ### View them in Postman by clicking [here](https://documenter.getpostman.com/view/11026000/Szzhddp3?version=latest)
 
-### SendGrid API has been used to send User a Confirmation Mail, Privacy Mail and a GoodBye Mail.
+### SendGrid API has been used to send: ###
+* A Welcome Mail when a User registers
+* Mail whenever they update their User Profile
+* A GoodBye Mail when they decide to delete their account
 
 ## For Local Use: ##
 

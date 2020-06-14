@@ -30,6 +30,8 @@ Product Route | Request Type | Function
 ## Sample Requests and Responses ##
 ### View them in Postman by clicking [here](https://documenter.getpostman.com/view/11026000/Szzhddp3?version=latest)
 
+### SendGrid API has been used to send User a Confirmation Mail, Privacy Mail and a GoodBye Mail.
+
 ## For Local Use: ##
 
 * Clone this Github repository and run 'npm install' to grab all the necessary packages required.

@@ -5,7 +5,7 @@ sgMail.setApiKey(process.env.SENDGRID_KEY)
 const sendWelcomeMail=(email,name)=>{
     sgMail.send({
         to:email,
-        from:'shubhamsdevacc@gmail.com',
+        from:process.env.MYMAIL,
         subject:`Welcome to KicksUp, ${name}`,
         text:`Thank you for registering with us, ${name}.\n`,
     })
@@ -14,7 +14,7 @@ const sendWelcomeMail=(email,name)=>{
 const sendGoodByeMail=(email,name)=>{
     sgMail.send({
         to:email,
-        from:'shubhamsdevacc@gmail.com',
+        from:process.env.MYMAIL,
         subject:`Sorry to see you go, ${name}`,
         text:`We, at KicksUp, hope to see you soon, ${name}.\nPlease let us know if we can do anything to improve ourselves.`,
     })

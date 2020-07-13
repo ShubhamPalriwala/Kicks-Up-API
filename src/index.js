@@ -8,6 +8,7 @@ const productRouter=require('./routers/productRouter')
 const app=express()
 const port=process.env.PORT || 3000
 
+app.use(express.json({ limit: '10kb' }));
 app.use(express.json())
 app.use('/users',userRouter)
 app.use('/products',productRouter)

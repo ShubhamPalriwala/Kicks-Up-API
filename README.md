@@ -53,4 +53,8 @@ View them in Postman by clicking [here](https://documenter.getpostman.com/view/1
     * `npm start` for Normal Use
     * `npm run dev` for Development Use
   * Now you can access the API at `localhost:3000`
+  ---
+ 
+  ### Currently working on addressing some Vulnerabilities
+  ---
   

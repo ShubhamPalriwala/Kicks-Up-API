@@ -2,7 +2,7 @@
 
 Here, I've created a Backend for an e-commerce website as my Web Dev project for ISOC 2020 by [IEEE-VIT](https://www.ieeevit.org ).
 
-I'd like to thank my Mentor [Ziyan Karmali](https://github.com/ZiyanK ) without whom this might have not been possible.
+I'd like to thank my Mentor [Ziyan Karmali](https://github.com/ZiyanK ) without whom this definitely would not have been possible.
 
 
 User Route  | Request Type | Function
